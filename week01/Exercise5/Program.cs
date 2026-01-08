@@ -1,9 +1,40 @@
 using System;
+using System.Data;
 
-class Program
+DisplayWelcome();
+
+string userName = PromptUserName();
+int num = PromptUserNumber();
+
+int squareNum = SquareNumber(num);
+DisplayResult(userName, squareNum);
+
+static void DisplayWelcome()
 {
-    static void Main(string[] args)
-    {
-        Console.WriteLine("Hello World! This is the Exercise5 Project.");
-    }
+    Console.Write("Welcome to the program!");
+}
+static string PromptUserName()
+{
+    Console.Write("What is your name?");
+    string userName = Console.ReadLine();
+    return userName;
+}
+
+static int PromptUserNumber()
+{
+    Console.Write("Enter your favorite number: ");
+    int num = int.Parse(Console.ReadLine());
+
+    return num;
+}
+
+static int SquareNumber(int num)
+{
+    int square = num * num;
+    return square;
+}
+
+static void DisplayResult(string userName, int square)
+{
+    Console.WriteLine($"{userName}, the square root of your number is: {square}");
 }
